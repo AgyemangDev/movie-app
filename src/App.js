@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Movie Land</h1>
+      <h1>Rai'na Movies</h1>
 
       <div className="search">
         <input
@@ -54,7 +54,14 @@ function App() {
           <h2>No Movies Found</h2>
         </div>
       )}
+    <br/>
+    <br/>
+    <br/>
+
+    <h2>created by <a href="https://linktr.ee/agyemang166">AgyemangDev</a></h2>
     </div>
+
+  
   );
 }
 
