@@ -3,16 +3,9 @@ import { useEffect, useState } from "react";
 import searchButton from "./image/search.svg";
 import MovieCard from "./MovieCard";
 
-const Movie1 = {
-  Title: "Viet Costas - Citizenship: Undefined",
-  Year: "2014",
-  imdbID: "tt3838986",
-  Type: "movie",
-  Poster:
-    "https://m.media-amazon.com/images/M/MV5BY2NhNzEzZDctZDkxYy00MmZhLWIyN2UtNWEzOTA0Y2VhYWY5XkEyXkFqcGdeQXVyNzg5OTk2OA@@._V1_SX300.jpg",
-};
 
-const URL_API = "http://www.omdbapi.com/?i=tt3896198&apikey=48618005";
+
+const URL_API = "https://www.omdbapi.com/?i=tt3896198&apikey=48618005";
 
 function App() {
   const [movies, setMovies] = useState("");
