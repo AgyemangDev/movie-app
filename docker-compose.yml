@@ -1,0 +1,33 @@
+services:
+  raina-movies:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_OMDB_API_KEY=${VITE_OMDB_API_KEY}
+    image: raina-movies:latest
+    container_name: raina-movies
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+  # Development service (hot reload)
+  raina-movies-dev:
+    image: node:20-alpine
+    container_name: raina-movies-dev
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_OMDB_API_KEY=${VITE_OMDB_API_KEY}
+    command: sh -c "npm install && npm run dev"
+    profiles:
+      - dev
