@@ -18,7 +18,7 @@ services:
 
   # Development service (hot reload)
   raina-movies-dev:
-    image: node:20-alpine
+    image: node:24-alpine
     container_name: raina-movies-dev
     working_dir: /app
     volumes:
